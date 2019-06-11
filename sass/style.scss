@@ -12,48 +12,49 @@ $dark: #00334e;
 // GLOBALS
 
 body {
-    font-family: 'Poppins', sans-serif;
-    font-weight: 400;
-    background-color: $grey;
-    text-align: center;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 400;
+  background-color: $grey;
+  text-align: center;
 }
 
 #game-winner {
-    font-size: 400%;
-    font-weight: 700;
-    text-transform: uppercase;
+  font-size: 400%;
+  font-weight: 700;
+  text-transform: uppercase;
 }
 
 #results-section {
-    display: none;
+  display: none;
 }
 
 #game-section {
-    display: none;
+  display: none;
 }
 
 #round-count::after {
-    content: "/";
-    margin: 0 1rem;
+  content: '/';
+  margin: 0 1rem;
 }
 
 #rock,
 #paper,
 #scissors {
-    transition: 0.8s;
+  transition: 0.8s;
 
-    &.off {
-        z-index: -2;
-        color: rgba(black, 0.3);
-    }
+  &.off {
+    z-index: -2;
+    color: rgba(black, 0.3);
+  }
 }
 
 section {
-    margin: 0 0;
+  margin: 0 0;
 }
 
 // IMPORTS
 
-@import "header";
-@import "buttons";
-@import "components";
+@import 'header';
+@import 'buttons';
+@import 'components';
+@import 'modal';

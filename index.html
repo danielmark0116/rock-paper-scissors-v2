@@ -12,6 +12,39 @@
     <title>Rock Paper Scissors</title>
 </head>
 <body class="animated fadeIn">
+    <div class="overlay" id="modal">
+        <div class="modal-box animated fadeInUp">
+            <div class="modal-box-header">
+                SUMMARY
+            </div>
+            <div class="modal-box-content">
+                <div id="results-section" class="results-section">
+                    <h2>WINNER:</h2>
+                    <h3 id="winner"></h3>
+                    <a href="." class="btn btn-success btn-lg active" role="button" aria-pressed="true">Play Again!</a>
+                </div>
+                <div class="table-box">
+                    <table class="table">
+                        <thead class="thead-dark">
+                            <tr>
+                                <th scope="col">Round Number</th>
+                                <th scope="col">Player's Move</th>
+                                <th scope="col">Robot's Move</th>
+                                <th scope="col">Round Winner</th>
+                                <th scope="col">Score</th>
+                            </tr>
+                        </thead>
+                        <tbody id="results-table">
+                            
+                        </tbody>
+                        </table>
+
+                        <table class="table">
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
     <div class="container pt-1 pb-1">
         <h1 class="text-center pt-5 hand-font animated fadeIn">ROCK PAPERS SCISSORS</h1>
         <p class="text-center">
@@ -45,13 +78,13 @@
             </div>
             <div class="row">
                 <div class="col col-sm-12 d-flex justify-content-center">
-                    <div id="rock" class="btn-game">
+                    <div id="rock" class="btn-game" data-move="rock">
                         <i class="far fa-hand-rock"></i>
                     </div>
-                    <div id="paper" class="btn-game">
+                    <div id="paper" class="btn-game" data-move="paper">
                         <i class="far fa-hand-paper"></i>
                     </div>
-                    <div id="scissors" class="btn-game">
+                    <div id="scissors" class="btn-game" data-move="scissors">
                         <i class="far fa-hand-scissors"></i>
                     </div>
                 </div>
@@ -81,11 +114,7 @@
                             </div>
                         </div>
                     </div>
-                    <div id="results-section" class="animated fadeInUp results-section">
-                        <h2>WINNER:</h2>
-                        <h3 id="winner"></h3>
-                        <a href="." class="btn btn-success btn-lg active" role="button" aria-pressed="true">Play Again!</a>
-                    </div>
+                    
                 </div>
                 <div class="col col-sm-4">
                     <div class="score-card">
@@ -105,6 +134,7 @@
             
         </div>
     </section>
+    
     
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>

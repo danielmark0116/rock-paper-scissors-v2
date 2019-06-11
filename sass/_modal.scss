@@ -1,0 +1,41 @@
+.overlay {
+  z-index: 9999;
+  background: rgba(black, 0.2);
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  display: none;
+  &.show {
+    display: block;
+  }
+  & .modal-box {
+    width: auto;
+    min-width: 300px;
+    background: white;
+
+    margin: 1rem 5rem;
+    border-radius: 5px;
+    padding: 0 0;
+
+    &-header {
+      padding: 1rem 3rem 0.3rem;
+      font-size: 1.5rem;
+      border-bottom: 0.5px solid $grey;
+    }
+    &-content {
+      padding: 1rem 1rem;
+      max-width: inherit;
+      max-height: 600px;
+      overflow: scroll;
+    }
+  }
+  & .table-box {
+    padding: 1rem 1rem;
+
+    & td {
+      text-transform: uppercase;
+    }
+  }
+}
