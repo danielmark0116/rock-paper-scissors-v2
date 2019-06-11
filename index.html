@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,700|Shadows+Into+Light" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="vendor/animate.css">
+    <title>Rock Paper Scissors</title>
+</head>
+<body class="animated fadeIn">
+    <div class="container pt-1 pb-1">
+        <h1 class="text-center pt-5 hand-font animated fadeIn">ROCK PAPERS SCISSORS</h1>
+        <p class="text-center">
+            <i class="fas fa-hand-rock"></i>
+            <i class="fas fa-hand-paper"></i>
+            <i class="fas fa-hand-scissors"></i>
+        </p>
+    </div>
+    <div class="container">
+        <div class="row d-flex justify-content-center">
+            <div class="start-btn active animated pulse infinite slow" id="start-btn">Let's play</div>
+        </div>
+    </div>
+    <section class="mt-1 animated fadeIn" id="game-section">
+        <div class="container">
+            <div class="row">
+                <div class="col col-sm-12">
+                    <div class="round-card">
+                        <h2>Round</h2>
+                        <div class="d-flex justify-content-center">
+                            <div id="round-count" class="round-card-left"></div>
+                            <div id="max-rounds-count" class="round-card-right"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col col-sm-12">
+                    <h2>Your move:</h2>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col col-sm-12 d-flex justify-content-center">
+                    <div id="rock" class="btn-game">
+                        <i class="far fa-hand-rock"></i>
+                    </div>
+                    <div id="paper" class="btn-game">
+                        <i class="far fa-hand-paper"></i>
+                    </div>
+                    <div id="scissors" class="btn-game">
+                        <i class="far fa-hand-scissors"></i>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col col-sm-4">
+                    <div class="score-card">
+                        <p>your score</p>
+                        <div id="player-score">0</div>
+                    </div>
+                </div>
+                <div class="col col-sm-4">
+                    <div id="test">
+                        <h2>Robot move:</h2>
+                        <div id="robot-move" class="d-flex justify-content-center animated bounce">
+                            <div class="btn-game-robot bounce">
+                                <i class="far fa-hand-rock"></i>
+                            </div>
+                            <div class="btn-game-robot bounce">
+                                <i class="far fa-hand-paper"></i>
+                            </div>
+                            <div class="btn-game-robot bounce">
+                                <i class="far fa-hand-scissors"></i>
+                            </div>
+                            <div class="btn-game-robot active animated bounce">
+                                <i class="far fa-circle"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="results-section" class="animated fadeInUp results-section">
+                        <h2>WINNER:</h2>
+                        <h3 id="winner"></h3>
+                        <a href="." class="btn btn-success btn-lg active" role="button" aria-pressed="true">Play Again!</a>
+                    </div>
+                </div>
+                <div class="col col-sm-4">
+                    <div class="score-card">
+                        <p>robot score</p>
+                        <div id="robot-score">0</div>
+                    </div>
+                </div>
+            </div>
+            <div class="row" id="test2">
+                <div class="col col-sm-12">
+                    <h2>Round winner:</h2>
+                </div>
+                <div class="col col-sm-12">
+                    <div id="game-winner" class=""></div>
+                </div>
+            </div>
+            
+        </div>
+    </section>
+    
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <script src="js/script.js"></script>
+</body>
+</html>

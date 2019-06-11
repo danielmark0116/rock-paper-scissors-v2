@@ -1,0 +1,57 @@
+.btn-game {
+    width: 150px;
+    height: 150px;
+    line-height: 150px;
+    font-size: 80px;
+    margin: 0 2rem;
+    padding: auto auto;
+    transition: 0.4s ease-in-out;
+    border-radius: 50%;
+    // background-color: rgba($dark, 0.4);
+    transform: scale(1) rotate(-20deg);
+
+    &:hover {
+        transform: scale(1.02) rotate(0deg);
+        text-shadow: 0px 0px 10px rgba(black, 0.1);
+        cursor: pointer;
+    }
+
+    &.block {
+        z-index: -2;
+    }
+}
+
+.start-btn {
+    // background-color: red;
+    font-weight: 700;
+    margin-top: 4rem;
+    font-size: 4rem;
+    display: none;
+
+    &:hover {
+        cursor: pointer;
+    }
+
+    &.active {
+        display: block;
+    }
+}
+
+.btn-game-robot {
+    @extend .btn-game;
+    transform: scale(1) rotate(0deg);
+    display: none;
+
+    &.active {
+        display: block;
+    }
+
+    &:hover {
+        cursor: auto;
+        transform: scale(1) rotate(0deg);
+    }
+}
+
+.fa-circle {
+    color: rgba(black, 0.2);
+}

@@ -1,0 +1,45 @@
+.round-card {
+  // color: $dark;
+  border-radius: 30px;
+  text-transform: uppercase;
+  width: 30%;
+  margin: 0 auto 2rem;
+  padding: 1rem 2rem;
+
+  & h2 {
+    font-size: 2.5rem;
+    font-weight: 700;
+  }
+
+  &-left,
+  &-right {
+    // color: $dark-blue;
+    font-size: 1.4rem;
+    font-weight: 700;
+  }
+}
+
+.score-card {
+  & p {
+    font-size: 1.4rem;
+    font-weight: 700;
+    text-transform: uppercase;
+  }
+
+  & div {
+    font-weight: 700;
+    font-size: 8rem;
+  }
+}
+
+.results-section {
+  & h2 {
+    font-weight: 700;
+  }
+
+  & h3 {
+    text-transform: uppercase;
+    font-weight: 700;
+    color: rgba(red, 0.7);
+  }
+}

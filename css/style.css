@@ -1,0 +1,53 @@
+body { font-family: 'Poppins', sans-serif; font-weight: 400; background-color: #e8e8e8; text-align: center; }
+
+#game-winner { font-size: 400%; font-weight: 700; text-transform: uppercase; }
+
+#results-section { display: none; }
+
+#game-section { display: none; }
+
+#round-count::after { content: "/"; margin: 0 1rem; }
+
+#rock, #paper, #scissors { transition: 0.8s; }
+
+#rock.off, #paper.off, #scissors.off { z-index: -2; color: rgba(0, 0, 0, 0.3); }
+
+section { margin: 0 0; }
+
+.hand-font { font-family: 'Shadows Into Light', cursive; font-size: 500%; }
+
+.fas { font-size: 120%; padding: 0 1rem; margin: 0 0 2rem; }
+
+.btn-game, .btn-game-robot { width: 150px; height: 150px; line-height: 150px; font-size: 80px; margin: 0 2rem; padding: auto auto; transition: 0.4s ease-in-out; border-radius: 50%; transform: scale(1) rotate(-20deg); }
+
+.btn-game:hover, .btn-game-robot:hover { transform: scale(1.02) rotate(0deg); text-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1); cursor: pointer; }
+
+.btn-game.block, .block.btn-game-robot { z-index: -2; }
+
+.start-btn { font-weight: 700; margin-top: 4rem; font-size: 4rem; display: none; }
+
+.start-btn:hover { cursor: pointer; }
+
+.start-btn.active { display: block; }
+
+.btn-game-robot { transform: scale(1) rotate(0deg); display: none; }
+
+.btn-game-robot.active { display: block; }
+
+.btn-game-robot:hover { cursor: auto; transform: scale(1) rotate(0deg); }
+
+.fa-circle { color: rgba(0, 0, 0, 0.2); }
+
+.round-card { border-radius: 30px; text-transform: uppercase; width: 30%; margin: 0 auto 2rem; padding: 1rem 2rem; }
+
+.round-card h2 { font-size: 2.5rem; font-weight: 700; }
+
+.round-card-left, .round-card-right { font-size: 1.4rem; font-weight: 700; }
+
+.score-card p { font-size: 1.4rem; font-weight: 700; text-transform: uppercase; }
+
+.score-card div { font-weight: 700; font-size: 8rem; }
+
+.results-section h2 { font-weight: 700; }
+
+.results-section h3 { text-transform: uppercase; font-weight: 700; color: rgba(255, 0, 0, 0.7); }
