@@ -1,8 +1,31 @@
 'use strict';
 
-// GAME SETTINGS
+document
+  .querySelector('form.start-game-form')
+  .addEventListener('submit', function(e) {
+    e.preventDefault();
+    document.querySelector('#modal-newgame').classList.remove('show');
 
-const btnsTimeout = 1000;
+    params.maxRoundsCount = document.querySelector('input#form-rounds').value;
+    params.playerName = document.querySelector('input#form-name').value;
+
+    params.maxRoundsCount = parseInt(params.maxRoundsCount);
+    params.maxRoundsCount++;
+
+    maxRoundsCountField.innerHTML = params.maxRoundsCount - 1;
+    let maxRoundsCount = params.maxRoundsCount;
+    if (Number.isInteger(maxRoundsCount)) {
+      gameSection.style.display = 'block';
+      startGameBtn.classList.toggle('active');
+    } else {
+      alert('Please, type in integer');
+    }
+    document.querySelectorAll('.player-name-box').forEach(x => {
+      x.insertAdjacentText('afterbegin', params.playerName);
+    });
+  });
+
+// GAME SETTINGS
 
 const gameField = document.querySelector('#game-winner');
 const playerScoreField = document.querySelector('#player-score');
@@ -15,13 +38,11 @@ const winnerField = document.querySelector('#winner');
 let maxRoundsCountField = document.querySelector('#max-rounds-count');
 const gameBtns = document.querySelectorAll('.btn-game');
 
-// let playerScore = 0;
-// let robotScore = 0;
-// let roundCount = 1;
-// let maxRoundsCount;
 roundCountField.innerHTML = 1;
 
 const params = {
+  btnsTimeout: 1000,
+  playerName: null,
   playerScore: 0,
   robotScore: 0,
   roundCount: 1,
@@ -30,22 +51,7 @@ const params = {
 };
 
 startGameBtn.addEventListener('click', function() {
-  params.maxRoundsCount = prompt(
-    'How many rounds you want to play?',
-    'Input must be integer'
-  );
-
-  params.maxRoundsCount = parseInt(params.maxRoundsCount);
-  params.maxRoundsCount++;
-
-  maxRoundsCountField.innerHTML = params.maxRoundsCount - 1;
-  let maxRoundsCount = params.maxRoundsCount;
-  if (Number.isInteger(maxRoundsCount)) {
-    gameSection.style.display = 'block';
-    startGameBtn.classList.toggle('active');
-  } else {
-    alert('Please, type in integer');
-  }
+  document.querySelector('#modal-newgame').classList.add('show');
 });
 
 // ------------------------------------------------------
@@ -83,7 +89,7 @@ const randomChar = x => {
 
 // evaluates who wins, player or robot or both
 const whoWins = (x, y) => {
-  console.log(`player ${x} -------  robot ${y}`);
+  console.log(`player ${x} - robot ${y}`);
   if (
     (x === 'rock' && y === 1) ||
     (x === 'paper' && y === 2) ||
@@ -107,7 +113,7 @@ const whoWins = (x, y) => {
     params.playerScore++;
     playerScoreField.innerHTML = params.playerScore;
     scoreAnimation(playerScoreField);
-    let whoWins = 'player';
+    let whoWins = params.playerName;
     params.progress.push({
       rndNo: params.roundCount,
       playerMove: x,
@@ -116,7 +122,7 @@ const whoWins = (x, y) => {
       playerPoints: params.playerScore,
       robotPoints: params.robotScore
     });
-    return 'player';
+    return params.playerName;
   } else if ((x === 'rock' && y === 2) || (x === 'paper' && y === 3)) {
     params.robotScore++;
     robotScoreField.innerHTML = params.robotScore;
@@ -202,18 +208,21 @@ const gameFinish = (maxRounds, roundNumber) => {
     });
     setTimeout(x => {
       resultsSection.style.display = 'block';
-      document.querySelector('#modal').classList.add('show');
+      document.querySelector('#modal-results').classList.add('show');
     }, 2000);
 
     let winner;
     if (params.playerScore === params.robotScore) {
       winner = 'draw';
     } else if (params.playerScore > params.robotScore) {
-      winner = 'player';
+      winner = params.playerName;
     } else {
       winner = 'robot';
     }
     winnerField.innerHTML = winner;
+    document
+      .querySelector('#results-player-name')
+      .insertAdjacentText('beforeend', `${params.playerName}'s Move`);
     params.progress.forEach(x => {
       let text = document.createElement('tr');
       text.insertAdjacentHTML(
@@ -228,13 +237,12 @@ const gameFinish = (maxRounds, roundNumber) => {
       );
       document.querySelector('#results-table').appendChild(text);
     });
-    console.log(params.progress);
   }
 };
 
 // CODE: ------------------------------------------
 
-// !!!!!!!! CODE CHANGE FOR V2 of the GAME
+// One function for each player's move (task 13.3 change)
 
 function playerMove(attr) {
   gameBtns.forEach(x => {
@@ -251,7 +259,7 @@ function playerMove(attr) {
     gameBtns.forEach(x => {
       x.classList.toggle('block');
     });
-  }, btnsTimeout);
+  }, params.btnsTimeout);
 }
 
 gameBtns.forEach(x => {

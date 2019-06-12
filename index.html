@@ -12,7 +12,7 @@
     <title>Rock Paper Scissors</title>
 </head>
 <body class="animated fadeIn">
-    <div class="overlay" id="modal">
+    <div class="overlay" id="modal-results">
         <div class="modal-box animated fadeInUp">
             <div class="modal-box-header">
                 SUMMARY
@@ -23,12 +23,14 @@
                     <h3 id="winner"></h3>
                     <a href="." class="btn btn-success btn-lg active" role="button" aria-pressed="true">Play Again!</a>
                 </div>
+            </div>
+            <div class="modal-box-content">
                 <div class="table-box">
                     <table class="table">
                         <thead class="thead-dark">
                             <tr>
                                 <th scope="col">Round Number</th>
-                                <th scope="col">Player's Move</th>
+                                <th scope="col" id="results-player-name"></th>
                                 <th scope="col">Robot's Move</th>
                                 <th scope="col">Round Winner</th>
                                 <th scope="col">Score</th>
@@ -42,6 +44,25 @@
                         <table class="table">
                     </table>
                 </div>
+            </div>
+        </div>
+    </div>
+    <div class="overlay" id="modal-newgame">
+        <div class="modal-box narrow animated fadeInUp">
+            <div class="modal-box-header">
+                NEW GAME
+            </div>
+            <div class="modal-box-content">
+                <form class="start-game-form">
+                    <div class="form-group">
+                        <input type="text" class="form-control" id="form-name" name="name" placeholder="Your nickname" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="number" class="form-control" id="form-rounds" name="rounds" placeholder="Number of rounds" required>
+                    </div>
+                    
+                    <button type="submit" class="btn btn-primary">Let's start!</button>
+                </form>
             </div>
         </div>
     </div>
@@ -73,7 +94,7 @@
             </div>
             <div class="row">
                 <div class="col col-sm-12">
-                    <h2>Your move:</h2>
+                    <h2 class="player-name-box">'s move</h2>
                 </div>
             </div>
             <div class="row">
@@ -92,13 +113,13 @@
             <div class="row">
                 <div class="col col-sm-4">
                     <div class="score-card">
-                        <p>your score</p>
+                        <p class="player-name-box">'s score</p>
                         <div id="player-score">0</div>
                     </div>
                 </div>
                 <div class="col col-sm-4">
                     <div id="test">
-                        <h2>Robot move:</h2>
+                        <h2>Robot</h2>
                         <div id="robot-move" class="d-flex justify-content-center animated bounce">
                             <div class="btn-game-robot bounce">
                                 <i class="far fa-hand-rock"></i>
